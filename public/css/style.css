@@ -1,0 +1,113 @@
+/* Reset geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilização do corpo da página */
+body {
+    background-color: #1b2838;
+    color: #c7d5e0;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Cabeçalhos */
+h1 {
+    color: #c7d5e0;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+form {
+    background: #2a475e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #66c0f4;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    color: #c7d5e0;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #66c0f4;
+    border-radius: 4px;
+    background: #1b2838;
+    color: #c7d5e0;
+}
+
+/* Botão */
+button, .botao {
+    display: inline-block;
+    background-color: #5cdb5c;
+    color: #1b2838;
+    padding: 12px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+button:hover, .botao:hover {
+    background-color: #45a045;
+}
+
+/* Tabela */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #2a475e;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    color: #c7d5e0;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #66c0f4;
+}
+
+th {
+    background: #5cdb5c;
+    color: #1b2838;
+}
+
+tr:nth-child(even) {
+    background: #1b2838;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #66c0f4;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+{}
+
+/* Container de botões */
+.opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}

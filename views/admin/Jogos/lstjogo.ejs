@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+
+
+    <h1>Jogos</h1>
+
+    <table border="1">
+        
+        <tr>
+            <th>Nome</th>
+            <th>Desenvolvedora</th>
+            <th>Preço</th>
+            <th>Opções</th>
+        </tr>
+        <% Jogo.forEach(function(jogo) { %>
+            <tr>
+                <td><%= jogo.nome %></td>
+                <td><%= jogo.desenvolvedora %></td>
+                <td><%= jogo.preco %></td>
+                <td>
+                    <a href="/admin/jogos/edtjogo/<%= jogo.id %>">Editar</a> |
+                    <a href="/admin/jogos/deljogo/<%= jogo.id %>">Excluir</a>
+                    <a href="/admin/chave/addchave">Chaves</a>
+                    
+                </td>
+            </tr>
+        <% }) %>
+        
+    </table>
+
+    <br>
+
+    <a href="/admin/jogos/addjogo">ADICIONAR NOVO JOGO</a> <br>
+    <a href="/">Inicio</a>
+
+</body>
+
+</html>
