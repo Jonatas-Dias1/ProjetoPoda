@@ -1,16 +1,17 @@
 import conexao from "../config/conexao.js";
 
+const chaveSchema = new conexao.Schema({
+  chave: {
+    type: String,
+    required: true,
+  },
+  jogo: {
+    type: conexao.Schema.Types.ObjectId,
+    ref: "Jogo",
+    required: true,
+  },
+});
 
-const Chave = conexao.Schema({
+const Chave = conexao.model("Chave", chaveSchema);
 
-
-    chave: {
-        type: String,
-        required: true,
-    },
-      
-  
-
-})
-
-export default conexao.model("Chave", Chave);
+export default Chave;

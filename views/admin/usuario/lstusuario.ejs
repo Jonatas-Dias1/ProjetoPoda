@@ -12,10 +12,20 @@
 
 
     <h1>USUARIOS</h1>
+ <form method="post" class="form-inline">
+                <div class="form-group mb-2">
+                    <label for="pesquisar" class="sr-only">Pesquisar</label>
+                    <input type="text" class="form-control" id="pesquisar" placeholder="Pesquisar" name="pesquisar">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+                  
+                
+            </form>
 
     <table border="1">
         
         <tr>
+            <th>Id</th>
             <th>Nome</th>
             <th>Email</th>
             <th>Senha</th>
@@ -23,23 +33,25 @@
         </tr>
         <% Usuarios.forEach(function(usuario){%>
         <tr>
-            
+            <td><%=usuario._id%></td>
             <td><%=usuario.nome%></td>
             <td><%=usuario.email%></td>
             <td><%=usuario.senha%></td>
             <td>
-                <a href="/admin/usuario/edtusuario/:1">Editar</a> |
-                <a href="/admin/usuario/delusuario/:id">Excluir</a> 
+                <a href="/admin/usuario/edtusuario/<%=usuario._id %>">Editar</a> |
+                <a href="/admin/usuario/delusuario/<%=usuario._id %>">Deleta</a>
+               
          
             </td>
         </tr>
+
         <%}) %>
         
     </table>
 
     <br>
 
-    <a href="/admin/usuario/addusuario">Adicionar Novo Usuario</a> <br>
+    <a href="/admin/usuario/addusuario" class="botao">Adicionar Novo Usuario</a> <br> <br><br><br>
     <a href="/">Inicio</a>
 
 </body>

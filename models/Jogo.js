@@ -1,8 +1,10 @@
+
+
 import conexao from "../config/conexao.js";
-import chave from "./Chave.js";
 
-const Jogo = conexao.Schema({
 
+const jogoSchema = new conexao.Schema({
+    
     nome: {
         type: String,
         required: true,
@@ -27,14 +29,15 @@ const Jogo = conexao.Schema({
         type: Number,
         required: true,
     },
-
-    chave: {
-        type: String,
-        required: true,
-    },
+    imagem:{
+        type:String, 
+        required:false
+    }
   
-  
+ 
+});
 
-})
+const Jogo = conexao.model("Jogo", jogoSchema);
 
-export default conexao.model("Jogo", Jogo);
+export default Jogo;
+

@@ -12,16 +12,18 @@
 <body>
     <h1>EDITAR CHAVE</h1>
     <form action="" method="post">
+        <label for="id">Id</label>
+        <input type="text" name="id" id="id" readonly value="<%= Chave._id %>"><br>
         <label for="nome">Chave</label>
         <input type="text" name="chave" id="chave"><br>
        
         
          
-        <input type="submit" value="Salvar">
+        <input type="submit" value="Salvar" class="botao">
 
    
-        <br>  <a href="/admin/chave/lstchave" class="botao"> Salvar</a>
-        <a href="/admin/chave/lstchave" class="botao"> Voltar</a>
+    
+        <a href="/admin/Jogos/lstjogo" class="botao"> Voltar Paea Jogos</a>
     </form>
 </body>
 

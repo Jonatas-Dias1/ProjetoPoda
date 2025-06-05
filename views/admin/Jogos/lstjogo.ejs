@@ -12,23 +12,44 @@
 
 
     <h1>Jogos</h1>
+     <form method="post" class="form-inline">
+                <div class="form-group mb-2">
+                    <label for="pesquisar" class="sr-only">Pesquisar</label>
+                    <input type="text" class="form-control" id="pesquisar" placeholder="Pesquisar" name="pesquisar">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+                  
+                
+            </form>
 
-    <table border="1">
+    <table border="1" enctype="multipart/form-data">
         
         <tr>
+            
+            <th>ID</th> 
             <th>Nome</th>
             <th>Desenvolvedora</th>
             <th>Preço</th>
+            <th>Data de Lançamento</th>
+            <th>Imagem</th>
             <th>Opções</th>
         </tr>
         <% Jogo.forEach(function(jogo) { %>
             <tr>
+                <td><%= jogo.id %></td>
                 <td><%= jogo.nome %></td>
                 <td><%= jogo.desenvolvedora %></td>
                 <td><%= jogo.preco %></td>
+                <td><%= jogo.datadelancamento.toLocaleString("pt-BR") %></td>
                 <td>
-                    <a href="/admin/jogos/edtjogo/<%= jogo.id %>">Editar</a> |
-                    <a href="/admin/jogos/deljogo/<%= jogo.id %>">Excluir</a>
+                    <img src="/img/<%= jogo.imagem %>" class="img-jogo">
+                </td>
+                
+                
+                
+                <td>
+                    <a href="/admin/Jogos/edtjogo/<%= jogo.id %>">Editar</a> |
+                    <a href="/admin/Jogos/deljogo/<%=jogo._id %>">Excluir</a> |
                     <a href="/admin/chave/addchave">Chaves</a>
                     
                 </td>
@@ -39,7 +60,7 @@
 
     <br>
 
-    <a href="/admin/jogos/addjogo">ADICIONAR NOVO JOGO</a> <br>
+    <a href="/admin/jogos/addjogo" class="botao">ADICIONAR NOVO JOGO</a> <br><br><br>
     <a href="/">Inicio</a>
 
 </body>

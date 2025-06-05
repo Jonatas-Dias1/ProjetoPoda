@@ -1,25 +1,38 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=for, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADICIONAR CHAVE</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-
 </head>
 
 <body>
-    <h1>ADICIONAR CHAVE</h1>
-    <form action="" method="post">
-        <label for="nome">Chave</label>
-        <input type="text" name="chave" id="chave"><br>
-        
-         
-        <input type="submit" value="Salvar">
-         <a href="/admin/chave/lstchave" class="botao"> Voltar</a>
-        
+
+    <h1>Adicionar Chave</h1>
+
+    <form action="/admin/chave/addchave" method="post">
+        <label for="chave">Chave:</label><br>
+        <input type="text" name="chave" id="chave" required><br><br>
+
+        <label for="jogo">Selecione o Jogo:</label><br>
+        <select name="jogo" id="jogo" required>
+            <% Jogo.forEach(function(jogo) { %>
+                <option value="<%= jogo._id %>"><%= jogo.nome %></option>
+            <% }) %>
+        </select><br><br>
+
+        <input type="submit" value="Salvar" class="botao">
     </form>
+
+    <br>
+
+    <a href="/admin/Jogos/lstjogo" class="botao">Voltar para Jogos</a> 
+    <a href="/admin/chave/lstchave" class="botao">Mostrar Chaves</a> <br>
+    <br><a href="/">Início</a>
+
 </body>
 
 </html>

@@ -4,35 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chave</title>
+    <title>CHAVES</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
 
-
-    <h1>Chaves</h1>
+    <h1>Lista de Chaves</h1>
+     <form method="post" class="form-inline">
+                <div class="form-group mb-2">
+                    <label for="pesquisar" class="sr-only">Pesquisar</label>
+                    <input type="text" class="form-control" id="pesquisar" placeholder="Pesquisar" name="pesquisar">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+                  
+                
+            </form>
 
     <table border="1">
-        
-        <tr>
-            <th>Chaves</th>
-           
-        </tr>
-        <% Chave.forEach(function(chave) { %>
+        <thead>
             <tr>
-                <td><%= chave.chave %></td>
-            
-        
+                <th>ID</th>
+                <th>Chave</th>
+                <th>Jogo</th>
+                <th>Opções</th>
             </tr>
-        <% }) %>
-        
+        </thead>
+        <tbody>
+            <% Chave.forEach(function(chave) { %>
+                <tr>
+                    <td><%= chave._id %></td>
+                    <td><%= chave.chave %></td>
+                    <td><%= chave.jogo ? chave.jogo.nome : "Jogo não encontrado" %></td>
+                    <td>
+                        <a href="/admin/chave/edtchave/<%= chave._id %>">Editar</a> |
+                        <a href="/admin/chave/delchave/<%= chave._id %>">Excluir</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
     </table>
 
     <br>
 
-    <a href="/admin/chave/addchave">ADICIONAR NOVA CHAVE</a> <br>
-    <a href="/">Inicio</a>
+    <a href="/admin/chave/addchave" class="botao">ADICIONAR NOVA CHAVE</a> <br>
+    <a href="/">Início</a>
 
 </body>
 

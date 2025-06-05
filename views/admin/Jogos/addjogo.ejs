@@ -3,33 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=for, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Jogo</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-
 </head>
 
 <body>
     <h1>ADICIONAR JOGO</h1>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome"><br>
-        <label for="genero">Genero</label>
+
+        <label for="genero">Gênero</label>
         <input type="text" name="genero" id="genero"><br>
-        <label type="datadelancamento">Data de Lançamento</label>
+
+        <label for="datadelancamento">Data de Lançamento</label>
         <input type="date" name="datadelancamento" id="datadelancamento"><br>
-        <label type="desenvolvedora">Desenvolvedora</label>
+
+        <label for="desenvolvedora">Desenvolvedora</label>
         <input type="text" name="desenvolvedora" id="desenvolvedora"><br>
-        <label type="categoria">Categoria</label>
+
+        <label for="categoria">Categoria</label>
         <input type="text" name="categoria" id="categoria"><br>
-       
-        <label type="preco">Preço</label>
-        <input type="number" name="preco" id="preco"><br>
-        
-         
-        <input type="submit" value="Salvar">
-         <a href="/admin/jogos/lstjogo" class="botao"> Voltar</a>
-        
+
+        <label for="imagem">Imagem</label>
+        <input type="file" name="imagem" id="imagem"><br>
+
+        <label for="preco">Preço</label>
+        <input type="number" step="0.01" name="preco" id="preco"><br>
+
+        <input type="submit" value="Salvar" class="botao">
+        <a href="/admin/jogos/lstjogo" class="botao">Voltar</a>
     </form>
 </body>
 
